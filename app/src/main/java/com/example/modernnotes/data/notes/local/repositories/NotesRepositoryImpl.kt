@@ -24,8 +24,8 @@ class NotesRepositoryImpl @Inject constructor(
         }.map { it.toDomain() }
     }
 
-    override fun getNoteById(noteId: Int): Flow<Note> {
-        return noteDao.getNoteById(noteId).map { it.toDomain() }
+    override suspend fun getNoteById(noteId: Int): Note {
+        return noteDao.getNoteById(noteId).toDomain()
     }
 
     override suspend fun addNotes(notesList: List<Note>) {

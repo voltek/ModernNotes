@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">ModernNotes</string>
     <string name="network_error">"Network error: %s"</string>
+    <string name="error_note_title_empty">"Title of the note can't be empty."</string>
+    <string name="error_note_content_empty">"Content of the note can't be empty"</string>
+    <string name="error_note_unknown_exception">"An error occurred while saving the note"</string>
+    <string name="cd_note_detail_back_arrow">Back</string>
+    <string name="note_detail_edit_note_title">Edit Note</string>
+    <string name="note_detail_new_note_title">New Note</string>
+    <string name="note_detail_save">Save</string>
+    <string name="note_detail_ph_title">Title</string>
+    <string name="note_detail_ph_content">Write your note here…</string>
+    <string name="cd_notes_list_add_new_note_fab">Add new note FAB</string>
 </resources>
