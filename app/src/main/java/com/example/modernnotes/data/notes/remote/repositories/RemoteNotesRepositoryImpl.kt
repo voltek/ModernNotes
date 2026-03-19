@@ -11,31 +11,36 @@ class RemoteNotesRepositoryImpl @Inject constructor(private val notesApi: NotesA
 
     override suspend fun fetchNotes(): Result<List<Note>> {
         return try {
-            //TODO Remove this: This is just for visual tests:
 
-            // Simulamos 2 segundos de carga en internet
-            delay(2000)
+                //TODO Remove this: This is just for visual tests:
 
-            val dummyNotes = listOf(
-                Note(
-                    id = 1,
-                    title = "Aprender Clean Architecture",
-                    content = "Paso 1: Entender Flow",
-                    createdAt = 1680000000L
-                ),
-                Note(
-                    id = 2,
-                    title = "Hacer la comida",
-                    content = "Comprar pollo",
-                    createdAt = 1680000010L
+                // Simulamos 2 segundos de carga en internet
+                delay(2000)
+
+                val dummyNotes = listOf(
+                    Note(
+                        id = 1,
+                        title = "Aprender Clean Architecture",
+                        content = "Paso 1: Entender Flow",
+                        createdAt = 1680000000L
+                    ),
+                    Note(
+                        id = 2,
+                        title = "Hacer la comida",
+                        content = "Comprar pollo",
+                        createdAt = 1680000010L
+                    )
                 )
-            )
 
+/*
             // TODO This is the real code to be enabled after deleted the previous dummy data
-            /* val notesDtos = notesApi.getNotes()
+            // and has to be enabled when you execute Unit Testing
+            val notesDtos = notesApi.getNotes()
             val domainNotes = notesDtos.map { it.toDomain() }
             Result.success(domainNotes)
-             */
+
+
+ */
 
             Result.success(dummyNotes)
         } catch (e: Exception) {

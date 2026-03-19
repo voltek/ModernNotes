@@ -1,6 +1,7 @@
 package com.example.modernnotes.di
 
 import com.example.modernnotes.BuildConfig
+import com.example.modernnotes.core.APPLICATION_JSON
 import com.example.modernnotes.data.notes.remote.api.NotesApi
 import dagger.Module
 import dagger.Provides
@@ -15,8 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
-    private const val APPLICATION_JSON = "application/json"
 
     @Provides
     @Singleton

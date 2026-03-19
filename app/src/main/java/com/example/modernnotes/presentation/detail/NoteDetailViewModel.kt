@@ -3,13 +3,12 @@ package com.example.modernnotes.presentation.detail
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.toRoute
 import com.example.modernnotes.R
 import com.example.modernnotes.core.EMPTY_STRING
 import com.example.modernnotes.domain.notes.models.InvalidNoteException
 import com.example.modernnotes.domain.notes.usecases.GetNoteByIdUseCase
 import com.example.modernnotes.domain.notes.usecases.SaveNoteUseCase
-import com.example.modernnotes.presentation.navigation.NoteDetailRoute
+import com.example.modernnotes.presentation.navigation.NOTE_ID_ARG
 import com.example.modernnotes.presentation.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -27,8 +26,12 @@ class NoteDetailViewModel @Inject constructor(
     private val saveNoteUseCase: SaveNoteUseCase
 ) : ViewModel() {
 
-    private val route = savedStateHandle.toRoute<NoteDetailRoute>()
-    private val noteId: Int? = route.noteId
+    // Type-Safe Navigation causes Method putInt in android.os.BaseBundle not mocked
+    // private val route = savedStateHandle.toRoute<NoteDetailRoute>()
+    //private val noteId: Int? = route.noteId
+
+    private val noteId: Int? = savedStateHandle[NOTE_ID_ARG]
+
     private val isEditMode = noteId != null
 
     private val _uiState = MutableStateFlow(NoteDetailUiState(isEditMode = isEditMode))

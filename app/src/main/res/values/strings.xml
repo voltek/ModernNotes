@@ -11,4 +11,9 @@
     <string name="note_detail_ph_title">Title</string>
     <string name="note_detail_ph_content">Write your note here…</string>
     <string name="cd_notes_list_add_new_note_fab">Add new note FAB</string>
+    <string name="cd_notes_list_screen_sort_order_button">Sort Order Button</string>
+    <string name="notes_list_screen_my_notes_title">My notes</string>
+    <string name="sort_order_title">Title</string>
+    <string name="sort_order_date_descendant">Date descendant</string>
+    <string name="sort_order_date_ascendant">Date ascendant</string>
 </resources>
