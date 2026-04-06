@@ -1,8 +1,7 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
 import com.example.modernnotes.domain.notes.models.SortOrder
 import com.example.modernnotes.domain.notes.repositories.UserPreferencesRepository
-import com.example.modernnotes.domain.notes.usecases.SetSortOrderUseCase
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify

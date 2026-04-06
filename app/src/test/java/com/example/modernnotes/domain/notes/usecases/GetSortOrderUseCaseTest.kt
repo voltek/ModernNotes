@@ -1,9 +1,8 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
 import app.cash.turbine.test
 import com.example.modernnotes.domain.notes.models.SortOrder
 import com.example.modernnotes.domain.notes.repositories.UserPreferencesRepository
-import com.example.modernnotes.domain.notes.usecases.GetSortOrderUseCase
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

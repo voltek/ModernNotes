@@ -13,21 +13,19 @@ class RemoteNotesRepositoryImpl @Inject constructor(private val notesApi: NotesA
         return try {
 
                 //TODO Remove this: This is just for visual tests:
-
-                // Simulamos 2 segundos de carga en internet
                 delay(2000)
 
                 val dummyNotes = listOf(
                     Note(
                         id = 1,
-                        title = "Aprender Clean Architecture",
-                        content = "Paso 1: Entender Flow",
+                        title = "Learn Clean Architecture",
+                        content = "Step 1: Understand Flow",
                         createdAt = 1680000000L
                     ),
                     Note(
                         id = 2,
-                        title = "Hacer la comida",
-                        content = "Comprar pollo",
+                        title = "Cook the food",
+                        content = "Buy some chicken",
                         createdAt = 1680000010L
                     )
                 )
@@ -38,8 +36,6 @@ class RemoteNotesRepositoryImpl @Inject constructor(private val notesApi: NotesA
             val notesDtos = notesApi.getNotes()
             val domainNotes = notesDtos.map { it.toDomain() }
             Result.success(domainNotes)
-
-
  */
 
             Result.success(dummyNotes)

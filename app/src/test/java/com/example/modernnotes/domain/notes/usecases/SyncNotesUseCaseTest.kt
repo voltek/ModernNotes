@@ -1,10 +1,9 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.models.Note
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
 import com.example.modernnotes.domain.notes.repositories.NotesRepository
 import com.example.modernnotes.domain.notes.repositories.RemoteNotesRepository
-import com.example.modernnotes.domain.notes.usecases.SyncNotesUseCase
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

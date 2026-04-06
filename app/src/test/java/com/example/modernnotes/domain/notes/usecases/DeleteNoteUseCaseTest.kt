@@ -1,8 +1,7 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.repositories.NotesRepository
-import com.example.modernnotes.domain.notes.usecases.DeleteNoteUseCase
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify

@@ -1,12 +1,11 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
 import app.cash.turbine.test
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.models.Note
 import com.example.modernnotes.domain.notes.models.SortOrder
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
 import com.example.modernnotes.domain.notes.repositories.NotesRepository
 import com.example.modernnotes.domain.notes.repositories.UserPreferencesRepository
-import com.example.modernnotes.domain.notes.usecases.GetNotesUseCase
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

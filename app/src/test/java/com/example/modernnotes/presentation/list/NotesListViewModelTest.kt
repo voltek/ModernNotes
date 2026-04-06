@@ -3,20 +3,25 @@ package com.example.modernnotes.presentation.list
 import app.cash.turbine.test
 import com.example.modernnotes.R
 import com.example.modernnotes.domain.notes.models.Note
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
+import com.example.modernnotes.domain.notes.models.SortOrder
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.usecases.GetNotesUseCase
 import com.example.modernnotes.domain.notes.usecases.GetSortOrderUseCase
 import com.example.modernnotes.domain.notes.usecases.SetSortOrderUseCase
 import com.example.modernnotes.domain.notes.usecases.SyncNotesUseCase
 import com.example.modernnotes.presentation.util.UiText
 import com.example.modernnotes.util.MainDispatcherRule
+import io.mockk.Runs
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
+import io.mockk.just
 import io.mockk.mockk
 import junit.framework.TestCase.assertFalse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
@@ -47,6 +52,7 @@ class NotesListViewModelTest {
         fakeNotesList = listOf(NoteTestFactory.createNote())
 
         every { getNotesUseCase() } returns flowOf(emptyList())
+        every { getSortOrderUseCase() } returns flowOf(SortOrder.DATE_DESC)
         coEvery { syncNotesUseCase() } returns Result.success(emptyList())
     }
 
@@ -128,6 +134,17 @@ class NotesListViewModelTest {
             assertEquals(R.string.network_error, (loadedState.error as UiText.StringResource).resId)
             cancelAndIgnoreRemainingEvents()
         }
+    }
+
+    @Test
+    fun `given new SortOrder when changeSortOrder then calls setOrderUseCase`() = runTest {
+        coEvery { setSortOrderUseCase(SortOrder.TITLE) } just Runs
+
+        val viewModel = createViewModel()
+        viewModel.changeSortOrder(SortOrder.TITLE)
+        advanceUntilIdle()
+
+        coVerify(exactly = 1) { setSortOrderUseCase(SortOrder.TITLE) }
     }
 
     private fun createViewModel() = NotesListViewModel(

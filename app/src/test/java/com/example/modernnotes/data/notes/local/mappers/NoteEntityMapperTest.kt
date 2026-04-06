@@ -3,7 +3,7 @@ package com.example.modernnotes.data.notes.local.mappers
 import com.example.modernnotes.data.notes.local.NoteEntityTestFactory
 import com.example.modernnotes.data.notes.local.entities.NoteEntity
 import com.example.modernnotes.domain.notes.models.Note
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals

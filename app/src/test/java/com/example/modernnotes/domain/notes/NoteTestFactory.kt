@@ -1,4 +1,4 @@
-package com.example.modernnotes.domain.notes.presentation
+package com.example.modernnotes.domain.notes
 
 import com.example.modernnotes.domain.notes.models.Note
 

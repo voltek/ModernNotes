@@ -1,4 +1,4 @@
-package com.example.modernnotes.domain.notes.presentation.util
+package com.example.modernnotes.domain.notes.util
 
 import com.example.modernnotes.domain.util.TimeProvider
 

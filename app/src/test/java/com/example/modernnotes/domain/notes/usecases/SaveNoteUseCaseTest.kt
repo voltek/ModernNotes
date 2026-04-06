@@ -1,10 +1,9 @@
-package com.example.modernnotes.domain.notes.presentation.usecases
+package com.example.modernnotes.domain.notes.usecases
 
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.models.InvalidNoteException
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
 import com.example.modernnotes.domain.notes.repositories.NotesRepository
-import com.example.modernnotes.domain.notes.usecases.SaveNoteUseCase
-import com.example.modernnotes.domain.notes.presentation.util.FakeTimeProvider
+import com.example.modernnotes.domain.notes.util.FakeTimeProvider
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest

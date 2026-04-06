@@ -6,7 +6,7 @@ import com.example.modernnotes.R
 import com.example.modernnotes.core.orDefault
 import com.example.modernnotes.domain.notes.models.InvalidNoteException
 import com.example.modernnotes.domain.notes.models.Note
-import com.example.modernnotes.domain.notes.presentation.NoteTestFactory
+import com.example.modernnotes.domain.notes.NoteTestFactory
 import com.example.modernnotes.domain.notes.usecases.GetNoteByIdUseCase
 import com.example.modernnotes.domain.notes.usecases.SaveNoteUseCase
 import com.example.modernnotes.presentation.navigation.NOTE_ID_ARG
