@@ -1,6 +1,7 @@
 package com.example.modernnotes.data.notes.remote.api
 
 import com.example.modernnotes.data.notes.remote.dtos.NoteDto
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -16,10 +17,10 @@ interface NotesApi {
     suspend fun getNoteById(@Path(ID) noteId: Int): NoteDto
 
     @POST("$NOTES/add_note")
-    suspend fun addNote(noteDto: NoteDto)
+    suspend fun addNote(@Body noteDto: NoteDto)
 
     @PUT(NOTES_ID)
-    suspend fun updateNote(@Path(ID) noteId: Int, noteDto: NoteDto)
+    suspend fun updateNote(@Path(ID) noteId: Int, @Body noteDto: NoteDto)
 
     @DELETE(NOTES_ID)
     suspend fun deleteNote(@Path(ID) noteId: Int)
