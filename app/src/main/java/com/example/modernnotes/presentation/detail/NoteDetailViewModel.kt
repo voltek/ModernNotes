@@ -61,8 +61,7 @@ class NoteDetailViewModel @Inject constructor(
 
                 _title.value = note.title
                 _content.value = note.content
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (_: Exception) {
                 _events.send(
                     NoteDetailUiEvent.ShowSnackbar(
                         UiText.StringResource(R.string.error_note_unknown_exception)
@@ -102,8 +101,7 @@ class NoteDetailViewModel @Inject constructor(
                 }
 
                 _events.send(NoteDetailUiEvent.ShowSnackbar(errorMessage))
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (_: Exception) {
                 _events.send(
                     NoteDetailUiEvent.ShowSnackbar(
                         UiText.StringResource(R.string.error_note_unknown_exception)

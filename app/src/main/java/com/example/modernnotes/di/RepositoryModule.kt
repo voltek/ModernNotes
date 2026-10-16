@@ -2,7 +2,7 @@ package com.example.modernnotes.di
 
 import com.example.modernnotes.data.notes.local.repositories.NotesRepositoryImpl
 import com.example.modernnotes.data.notes.local.user_preferences.UserPreferencesRepositoryImpl
-import com.example.modernnotes.data.notes.remote.repositories.RemoteNotesRepositoryImpl
+import com.example.modernnotes.data.notes.remote.repositories.FakeRemoteNotesRepositoryImpl
 import com.example.modernnotes.domain.notes.repositories.NotesRepository
 import com.example.modernnotes.domain.notes.repositories.RemoteNotesRepository
 import com.example.modernnotes.domain.notes.repositories.UserPreferencesRepository
@@ -25,7 +25,10 @@ abstract class RepositoryModule {
     abstract fun bindUserPreferencesRepository(userPreferencesRepositoryImpl: UserPreferencesRepositoryImpl): UserPreferencesRepository
 
 
+    /**
+     * There is no backend for this learning project.
+     */
     @Binds
     @Singleton
-    abstract fun bindRemoteNotesRepository(remoteNotesRepositoryImpl: RemoteNotesRepositoryImpl): RemoteNotesRepository
+    abstract fun bindRemoteNotesRepository(fakeRemoteNotesRepositoryImpl: FakeRemoteNotesRepositoryImpl): RemoteNotesRepository
 }
