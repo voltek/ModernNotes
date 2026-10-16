@@ -4,7 +4,7 @@ import com.example.modernnotes.data.notes.remote.dtos.NoteDto
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class NoteDtoMapper {
+class NoteDtoMapperTest {
 
     @Test
     fun `toDomain maps all fields correctly`() {
