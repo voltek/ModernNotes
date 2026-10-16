@@ -54,7 +54,7 @@ class NotesListViewModel @Inject constructor(
     ): NotesListUiState {
         return NotesListUiState(
             notes = notes,
-            isLoading = isLoading,
+            isLoading = isLoading && notes.isEmpty(),
             error = error,
             sortOrder = sortOrder
         )
