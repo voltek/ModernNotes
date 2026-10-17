@@ -103,7 +103,7 @@ This is a learning project, and these are stated rather than hidden:
 
 - **There is no real backend.** The remote layer — Retrofit interface, DTO, mapper and
   `RemoteNotesRepositoryImpl` — is implemented and tested against MockWebServer, but the app
-  binds `FakeRemoteNotesRepository` instead, which returns two demo notes after a simulated
+  binds `FakeRemoteNotesRepositoryImpl` instead, which returns two demo notes after a simulated
   delay so the loading state can be seen on a device. Swapping in a real API is a one-line
   change in `RepositoryModule`.
 - **Deleting a note is implemented in the domain and data layers** (`DeleteNoteUseCase`,
