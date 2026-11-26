@@ -4,6 +4,10 @@ A small, offline-first notes app for Android, built with Kotlin and Jetpack Comp
 and a deliberate exercise in writing **every line of code by hand**.
 
 <p align="center">
+  <img src="docs/screenshots/demo.gif" width="270" alt="A note is added, the list is sorted by title, and the new note opens to edit" />
+</p>
+
+<p align="center">
   <img src="docs/screenshots/home.png" width="200" alt="Notes list" />
   &nbsp;
   <img src="docs/screenshots/filters.png" width="200" alt="Sort order menu" />
